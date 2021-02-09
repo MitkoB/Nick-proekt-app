@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <link href="../static/flip_card.css" type="text/css" rel="stylesheet"/>
+    <link th:href="@{~/flip_card.css}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>HCI Project Categories Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <style>
+        .card{
+            border: none;
+        }
+        .card .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.7s;
+            z-index: 1;
+        }
+        .card .face {
+            height: 230px;
+            transition: 0.5s;
+        }
+
+        .card .face.face1 {
+            position: relative;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transform: translateY(110px);
+        }
+
+        .card:hover .face.face1{
+            background: white;
+            transform: translateY(0px);
+        }
+
+        .card .face.face1 .content {
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .card:hover .face.face1 .content {
+            opacity: 1;
+        }
+
+        .card .face.face2 {
+            height: 250px;
+            position: relative;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.5);
+            transform: translateY(-110px);
+        }
+
+        .card:hover .face.face2{
+            transform: translateY(0);
+        }
+
+        .card .face.face2 .content p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #414141;
+        }
+
+        .reminder {
+            width : 300px;
+            background: #e86f00;
+            margin : 20px auto;
+        }
+
+        span {
+            padding : 10px;
+            background : #e86f00;
+            color : white;
+            font-size : 1.2em;
+            font-variant : small-caps;
+            cursor : pointer;
+            display: block;
+        }
+
+        span::after {
+            float: right;
+            right: 10%;
+        }
+        .slide {
+            clear:both;
+            width:100%;
+            height:0px;
+            overflow: hidden;
+            text-align: center;
+            transition: height .4s ease;
+        }
+
+        #touch {position: absolute; opacity: 0; height: 0px;}
+        #touch:checked + .slide {height: 200px;}
+
+    </style>
+</head>
+<body>
+<div class="mt-5 mb-5" style="position: relative; top:7%">
+    <div class="mt-2 text-center">
+        <h2 class="text-center display-4" style="color:cornflowerblue">Изберете какви вежби сакате </h2>
+        <h4 class="text-center" style="color:cornflowerblue">Може да изберете со помош на копчињата со броеви од
+            тастатура</h4>
+        <form method="POST" action="/exercises">
+            <label class="text-center" style="color:cornflowerblue" for='search1'>Вметни број на категорија и ентер:</label><br/>
+            <input id='search1' type='text' name='search1'/><br/>
+            <input class="text-white mt-1" style="background-color:#e86f00" type="submit" value="Submit">
+        </form>
+        <div class="reminder">
+            <label for="touch"><span>Потсетник <i class="fa fa-bars text-white"></i></span></label>
+            <input type="checkbox" id="touch">
+            <div class="slide">
+                <p class="text-white">Здраво
+                    <th:block th:if="${#request.getRemoteUser() != null}" th:text="${#request.getRemoteUser()}"></th:block>!
+                    Минатата недела ги завршивте вежбите за:<br><b>Раце</b><br><b>Грб</b><br><br>
+                    Наш предлог за вас е: <b>Истегнување</b>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row mt-4 justify-content-around">
+            <div class="col-xs-8 col-sm-8 col-md-2" th:each="category: ${categories}">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content card-img">
+                            <div class="icon">
+                                <h3 class="text-center">
+                                    <th:block th:text="${category.id}"/>
+                                    .
+                                    <th:block th:text="${category.name}"/>
+                                </h3>
+                                <img th:src="${category.firstImage}" class="card-img-top" height="200px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="face face2 mt-2">
+                        <div class="content">
+                            <p th:text="${category.description}" class="pt-2 pb-1"></p>
+                            <a class="btn btn-link btn-block text-white mt-1"
+                               th:href="@{'/exercises/{id}' (id=${category.getId()})}"
+                               style="background-color:#e86f00">Види ги вежбите
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

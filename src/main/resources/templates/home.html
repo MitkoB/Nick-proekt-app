@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Start page</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        .pulse-button {
+            position: absolute;
+            display: block;
+            font-family: 'Trebuchet MS', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            margin: auto;
+            letter-spacing: -1px;
+            background: #5a99d4;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(90, 153, 212, .5);
+            -webkit-animation: pulse 1.5s infinite;
+        }
+
+        @-webkit-keyframes pulse {
+            0% {
+            @include transform(scale(.9));
+            }
+            70% {
+            @include transform(scale(1));
+                box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+            }
+            100% {
+            @include transform(scale(.9));
+                box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="position:relative;">
+    <div class="w-100"  style="position:absolute;top:0; height: 100vh; width: 100%; overflow:hidden;">
+        <img class="d-block w-100" src="https://cdn.techexplorist.com/wp-content/uploads/2019/12/exercise-clipart-physical-activity-scaled.jpg" alt="Second slide"/>
+        <a type="button"  id="myBtn" name="myBtn" th:href="@{/categories}" class="pulse-button btn btn-lg btn-primary"
+           style="background: cornflowerblue; top:30%; z-index: 20; height: 10%; width: 40%;">ЗАПОЧНИ <br><small>
+            (клик на ова копче или пак ENTER од тастатура)</small></a>
+    </div>
+
+</div>
+</body>
+</html>

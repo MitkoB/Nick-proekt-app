@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Вежби</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container mt-5 mb-5" style="position: relative; top:7%">
+    <div class="mt-2">
+        <h2 class="text-center display-4" style="color:cornflowerblue">Листа со вежби</h2>
+        <hr style="background: linear-gradient(.25turn,cornflowerblue, green, white); height:3px;" />
+    </div>
+    <div class="row mt-6 justify-content-around">
+        <div class="col-md-4 col-sm-8 col-md-2" th:each="ex: ${exercises}">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content card-img">
+                        <div class="icon">
+                            <h3 class="text-center">
+                                <th:block th:text="${ex.getId()}"/>
+                                .
+                                <th:block th:text="${ex.getName()}"/>
+                            </h3>
+                            <img th:src="${ex.getImageFirst()}" class="card-img-top" height="200px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="face face2 mt-2">
+                    <div class="content">
+                        <b>Опис:</b>
+                        <p th:text="${ex.getDescription}" class="pt-2 pb-1"></p>
+                        <b>Повторувања:</b>
+                        <p th:text="${ex.getRepeat()}" class="pt-2 pb-1"></p>
+                        <p>
+                            <input type="checkbox" name="finish_exercise" id="finish_exercise" onclick="myFunction()" class="" >
+                            <label for="finish_exercise"><b>Ја комплетирав!</b></label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align: center">
+        <a type="button"  id="finish" name="finish" href="/congrats" class="pulse-button btn btn-lg btn-primary"
+           style="background: green; height: 10%; width: 20%;">КРАЈ <br></a>
+    </div>
+</div>
+<script>
+    function myFunction(){
+    var checkBox = document.getElementById("finish_exercise");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+        window.alert("БРАВО! ПРЕМИНИ НА НАРЕДНА ВЕЖБА");
+    }}
+</script>
+</body>
+</html>
