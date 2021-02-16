@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","/home").permitAll()
                 .anyRequest()
-                .authenticated()
+                .permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
@@ -46,6 +46,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("marijazimbakovska")
                 .password(passwordEncoder.encode("mz"))
-                .authorities("ROLE_ADMIN");
+                .authorities("ROLE_ADMIN")
+                .and()
+                .withUser("start")
+                .password(passwordEncoder.encode("start"))
+                .authorities("ROLE_USER");
     }
 }

@@ -42,8 +42,17 @@
             <div class="h3" style="font-family: 'Brush Script MT'; color: cornflowerblue;">
                 БРАВО!
             </div>
+            <audio controls autoplay id="bravoAudio" src="../static/images/bravo.mp3"  th:src="@{images/bravo.mp3}" type="audio/mpeg">
+            </audio>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        //autoplay rabote samo kaj edge kaj chrome nz oti nejke :(
+        var audio = $('#bravoAudio').get(0);
+        audio.play()
+    });
+</script>
 </body>
 </html>

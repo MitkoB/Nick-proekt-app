@@ -42,11 +42,24 @@
 <div style="position:relative;">
     <div class="w-100"  style="position:absolute;top:0; height: 100vh; width: 100%; overflow:hidden;">
         <img class="d-block w-100" src="https://cdn.techexplorist.com/wp-content/uploads/2019/12/exercise-clipart-physical-activity-scaled.jpg" alt="Second slide"/>
-        <a type="button"  id="myBtn" name="myBtn" th:href="@{/categories}" class="pulse-button btn btn-lg btn-primary"
-           style="background: cornflowerblue; top:30%; z-index: 20; height: 10%; width: 40%;">ЗАПОЧНИ <br><small>
-            (клик на ова копче или пак ENTER од тастатура)</small></a>
+        <a type="button" onclick="return myFunction()" id="myBtn" name="myBtn" th:href="@{/categories}" class="pulse-button btn btn-lg btn-primary"
+           style="background: cornflowerblue; top:30%; right: 50%; z-index: 20; height: 10%; width: 40%;">ЗАПОЧНИ <br><small>
+            (клик на ова копче или пак ENTER од тастатура)</small>
+        </a>
     </div>
-
 </div>
+<script>
+    function myFunction (){
+        window.location = "http://localhost:8080/categories";
+    }
+    document.onkeyup = function(e) {
+        if (e.which == 13) {
+            {
+                //enter
+                $("#myBtn").click();
+            }
+        }
+    };
+</script>
 </body>
 </html>

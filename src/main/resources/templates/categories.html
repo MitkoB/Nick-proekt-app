@@ -113,10 +113,17 @@
         <h2 class="text-center display-4" style="color:cornflowerblue">Изберете какви вежби сакате </h2>
         <h4 class="text-center" style="color:cornflowerblue">Може да изберете со помош на копчињата со броеви од
             тастатура</h4>
+        <ul style="list-style: none">
+            <li>Кликни 'a' на тастатура, ако целта ти е категорија 1</li>
+            <li>Кликни 's' на тастатура, ако целта ти е категорија 2</li>
+            <li>Кликни 'd' на тастатура, ако целта ти е категорија 3</li>
+            <li>Кликни 'f' на тастатура, ако целта ти е категорија 4</li>
+            <li>Кликни 'g' на тастатура, ако целта ти е категорија 5</li>
+        </ul>
         <form method="POST" action="/exercises">
             <label class="text-center" style="color:cornflowerblue" for='search1'>Вметни број на категорија и ентер:</label><br/>
             <input id='search1' type='text' name='search1'/><br/>
-            <input class="text-white mt-1" style="background-color:#e86f00" type="submit" value="Submit">
+            <input class="text-white mt-1" style="background-color:#e86f00" type="submit" value="Submit" id="done">
         </form>
         <div class="reminder">
             <label for="touch"><span>Потсетник <i class="fa fa-bars text-white"></i></span></label>
@@ -149,7 +156,7 @@
                     <div class="face face2 mt-2">
                         <div class="content">
                             <p th:text="${category.description}" class="pt-2 pb-1"></p>
-                            <a class="btn btn-link btn-block text-white mt-1"
+                            <a class="btn btn-link btn-block text-white mt-1" name="seeEx" id="seeEx"
                                th:href="@{'/exercises/{id}' (id=${category.getId()})}"
                                style="background-color:#e86f00">Види ги вежбите
                             </a>
@@ -162,5 +169,34 @@
 </div>
 
 </div>
+
+<script>
+    document.onkeyup = function(e) {
+        if (e.which == 65) {
+            {
+                //a
+                $("#search1").val(1);
+                $("#done").click();
+            }
+        } else if (e.which == 83) {
+            //s
+            $("#search1").val(2);
+            $("#done").click();
+        } else if (e.which == 68) {
+            //d
+            $("#search1").val(3);
+            $("#done").click();
+        } else if (e.which == 70) {
+            //f
+            $("#search1").val(4);
+            $("#done").click();
+        } else if(e.which==71){
+            //g
+            $("#search1").val(5);
+            $("#done").click();
+
+        }
+    };
+</script>
 </body>
 </html>
