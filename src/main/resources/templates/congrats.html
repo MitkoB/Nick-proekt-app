@@ -8,45 +8,43 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <style>
-        body{
-            background-image: url("https://cdn2.vectorstock.com/i/1000x1000/85/41/cartoon-children-play-with-soap-bubbles-vector-20568541.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .help{
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid darkgray;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-<div class="container mt-5 " style="margin-bottom: 250px;">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 help">
-            <div class="h3" style="font-family: 'Brush Script MT'; color: cornflowerblue;">
-                Сертификат за успешно завршена серија од вежби!
+<div class="container mt-5 mb-5 " xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="bgContainer text-white mr-5 ml-5 pt-3 pb-5 pr-5 pl-5" style="background: cornflowerblue; box-shadow: 10px 10px 30px grey">
+        <h3 class="text-center display-4" style="color:antiquewhite">Сертификат за: <th:block th:text="${#request.getRemoteUser()}"></th:block></h3>
+        <hr style="background: linear-gradient(.25turn,darkmagenta, #e86f00, darkolivegreen);border:0; height:3px;" />
+        <div class="w3-container w3-animate-zoom">
+            <!--------------------- СЛИКИ------------------------------>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!------ Тука провери ако има и втора слика внесено стави га до првата у иста колона ваљда добро ќее ----->
+                    <div  class="mt-4">
+                    <p  class="display-1" style="color: whitesmoke; font-size: 40px;">Овој сертификат го доделува</p>
+                    </div>
+                    <div  class="mt-4">
+                        <p  style="color: orangered; font-size: 40px; font-family:'Academy Engraved LET'">Мој тренер</p>
+                    </div>
+                </div>
             </div>
-            <br/>
-            <br/>
-            <div style="font-family: 'Brush Script MT'">
-                Овој сертификат е наменет за вас, поради успешното комплетирање на серија со вежби.
+            <!--------------------- ИНФОРМАЦИИ ------------------------------>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-6 text-right border-right pr-2">
+                    <dl>
+                        <dt style="color:white">За:</dt>
+                        <dd>Овој сертификат се доделува за успешно комплетирање на серија од вежби, продолжете вака! Мој тренер за вас
+                        има на располагање уште многу други вежби да се чувствувате здрави и среќни. Браво</dd>
+                    </dl>
+                </div>
             </div>
-            <div style="font-family: 'Brush Script MT'">
-                Продолжете понатаму со вежбање!
+            <div class="mt-5">
+                <p class="display-1 text-center" style="color: whitesmoke; font-size: 40px; font-family: 'Brush Script MT'">Браво!</p>
             </div>
-            <br/>
-            <br/>
-            <div class="h3" style="font-family: 'Brush Script MT'; color: cornflowerblue;">
-                БРАВО!
-            </div>
-            <audio controls autoplay id="bravoAudio" src="../static/images/bravo.mp3"  th:src="@{images/bravo.mp3}" type="audio/mpeg">
+            <audio style="display: none" controls autoplay id="bravoAudio" src="../static/images/bravo.mp3"  th:src="@{images/bravo.mp3}" type="audio/mpeg">
             </audio>
+            </div>
         </div>
     </div>
-</div>
 <script>
     $(document).ready(function(){
         //autoplay rabote samo kaj edge kaj chrome nz oti nejke :(

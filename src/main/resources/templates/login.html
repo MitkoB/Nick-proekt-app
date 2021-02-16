@@ -45,12 +45,12 @@
                 <div class="form-group mt-5">
                 <label for="username" class="sr-only">Корисничко име</label>
                     <input  id="username" name="username" class="form-control" placeholder="Корисничко име" required="" autofocus="">
-                    <i class="pointer fa fa-4x fa-microphone-slash" id="mic"></i>
+                    <i class="pointer fa fa-2x fa-microphone-slash mt-2" id="mic"></i>
                 </div>
                 <div class="form-group mt-2">
                 <label for="password" class="sr-only">Лозинка</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Лозинка" required="">
-                    <i class="pointer fa fa-4x fa-microphone-slash" id="mic1"></i>
+                    <i class="pointer fa fa-2x fa-microphone-slash mt-2" id="mic1"></i>
                 </div>
                 <div th:if="${hasErrors}">
                     <div th:text="${error}" class="text-danger"></div>
@@ -84,7 +84,7 @@
                 {
                     $("#username").val(result);
                 }
-                else{
+                else if($("#mic1").hasClass("fa-microphone blink")){
                     $("#password").val(result);
                 }
             }

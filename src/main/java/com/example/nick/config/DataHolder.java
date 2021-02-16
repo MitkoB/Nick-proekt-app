@@ -58,8 +58,5 @@ public class DataHolder {
                          "Повторете го на спротивната страна.",4L,
                 "https://thumbs.gfycat.com/WhiteWeepyGermanspitz-small.gif","https://thumbs.gfycat.com/WhiteWeepyGermanspitz-small.gif","1-5 пати");
 
-
-
-
     }
 }
