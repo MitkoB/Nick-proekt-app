@@ -57,6 +57,57 @@ public class DataHolder {
                         "5. Полека вратете ги и главата и колената во почетната позиција.\n" +
                          "Повторете го на спротивната страна.",4L,
                 "https://thumbs.gfycat.com/WhiteWeepyGermanspitz-small.gif","https://thumbs.gfycat.com/WhiteWeepyGermanspitz-small.gif","1-5 пати");
+        this.exerciseService.create("Детска позиција","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Со рацете и колената на земја, спуштајте се надолу.\n" +
+                        "2. Потпрете го стомакот на бутовите.\n" +
+                        "3. Проширете ги рацете пред или заедно со телото со дланките свртени нагоре.\n" +
+                        "4. Фокусирајте се на длабоко дишење и опуштање на сите области на напнатост или затегнатост.\n" +
+                         "Држете ја оваа позиција до 1 минута.",1L,
+                "https://thumbs.gfycat.com/AdolescentIlliterateKoodoo-max-1mb.gif","https://thumbs.gfycat.com/AdolescentIlliterateKoodoo-max-1mb.gif","1-5 пати");
+        this.exerciseService.create("Cat-cow","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Поставете се во позиција на маса, и раце и нозе на земја.\n" +
+                        "2. Притиснете со рацете и нозете додека вдишувате за да погледнете нагоре, дозволувајќи му на вашиот стомак да се наполни со воздух.\n" +
+                        "3. Издишете, вметнете ја брадата во градите и заоблете го 'рбетот кон таванот.\n" +
+                        "Правете 1/2 минути.",1L,
+                "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Cat-Cow.gif","https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Cat-Cow.gif","1-5 пати");
+
+        this.exerciseService.create("Military press","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Со дланките свртени напред, држете тегови над секое рамо, приближно во висина на брадата.\n" +
+                        "2. Теговите дигајте ги над глава.\n" +
+                        "3. Држете ги неколку секунди и спуштете ги повторно во почетна позиција.\n"
+                        ,3L,
+                "https://post.healthline.com/wp-content/uploads/2020/05/400x400_Try_This_5_Free_Weight_Exercises_to_Consider_and_Why_You_Should_Overhead_Shoulder_Press.gif","https://post.healthline.com/wp-content/uploads/2020/05/400x400_Try_This_5_Free_Weight_Exercises_to_Consider_and_Why_You_Should_Overhead_Shoulder_Press.gif","15 пати");
+        this.exerciseService.create("Lateral raise","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Застанете или седете со рацете настрана и со тег во секоја рака.\n" +
+                        "2. Со дланките свртени кон телото и лаковите малку свиткани, подигнете ги тегови, така што рацете ќе бидат паралелни со подот. Треба да направите Т-форма.\n" +
+                        "3. Полека спуштете ги тегови до почетната позиција.\n"
+                ,3L,
+                "http://www.lifetime60day.com/wp-content/uploads/2017/12/Lateral-Raise.gif","http://www.lifetime60day.com/wp-content/uploads/2017/12/Lateral-Raise.gif","15 пати");
+        this.exerciseService.create("Quad stretch","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Застанете со вашата страна кон ѕидот, ставајќи рака на ѕидот за рамнотежа.\n" +
+                        "2. Држете ја надворешната нога со надворешната рака и подигнете ја ногата нагоре кон задниот крај, држејќи ги бутовите и колената заедно.\n" +
+                        "3. Држете за циклус на релаксирано дишење, а потоа сторете го истото за другата нога.\n"
+                       ,2L,
+                "https://thumbs.gfycat.com/DeliriousFearfulIslandcanary-small.gif","https://thumbs.gfycat.com/DeliriousFearfulIslandcanary-small.gif","10 пати на секоја нога");
+        this.exerciseService.create("Inner thigh stretch","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Застанете со многу широк став. \n" +
+                        "2. Свиткајте го десното колено додека го менувате целото тело десно додека не почувствувате истегнување на левата внатрешна нога.\n" +
+                        "3. Издишете, вметнете ја брадата во градите и заоблете го 'рбетот кон таванот.\n" +
+                        "Правете 1/2 минути.",2L,
+                "https://thumbs.gfycat.com/DeterminedConcernedAmurstarfish-small.gif","https://thumbs.gfycat.com/DeterminedConcernedAmurstarfish-small.gif","10 пати на секоја нога");
+
+        this.exerciseService.create("Cobra stretch","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Легнете на стомак и ставете ги рацете рамно под рамената.\n" +
+                        "2. Свиткајте ги лактите за вашите страни и нежно подигнете ја главата и градите, држејќи ги колковите и препоните на креветот.\n" +
+                        "3. Не заборавајте да ги опуштите вратот и рамената. Држете го истегнувањето 15-20 секунди и кога сте подготвени, нежно спуштете се надолу.\n"
+                        ,5L,
+                "https://images.squarespace-cdn.com/content/v1/5b900adb4cde7a0e7998e50c/1579210508938-IQJOJHAPLJ59KGPKDFKS/ke17ZwdGBToddI8pDm48kLPswmMOqQZ9-Q6KHLjvbpZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UVTQf06wQztZgT3ocQ_Nttc9pRe5bgfSgFgLIpbw9lM5m7cT0R_dexc_UL_zbpz6JQ/Cobra-top-title.gif","https://images.squarespace-cdn.com/content/v1/5b900adb4cde7a0e7998e50c/1579210508938-IQJOJHAPLJ59KGPKDFKS/ke17ZwdGBToddI8pDm48kLPswmMOqQZ9-Q6KHLjvbpZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UVTQf06wQztZgT3ocQ_Nttc9pRe5bgfSgFgLIpbw9lM5m7cT0R_dexc_UL_zbpz6JQ/Cobra-top-title.gif","2 пати");
+        this.exerciseService.create(" Spinal twist","За да ја направете оваа вежба следете ги следните чекори: \n" +
+                        "1. Лежејќи на грб, подигнете го едното колено и нежно превртете го на спротивната страна. Осигурете се дека и двете рамена остануваат во контакт со подлогата постојано..\n" +
+                        "2. Треба да го почувствувате истегнувањето на страните на горниот дел од телото и долниот дел на грбот.\n" +
+                        "3. Дишете длабоко и повторете го на спротивната страна.\n"
+                       ,5L,
+                "https://www.verywellfit.com/thmb/3TEbXpzrpMJwy0A4RlhA3zQCQ04=/1500x844/smart/filters:no_upscale()/Verywell-20-4023748-SpinalTwist01-1729-5995b536845b340010c016cf.gif","https://www.verywellfit.com/thmb/3TEbXpzrpMJwy0A4RlhA3zQCQ04=/1500x844/smart/filters:no_upscale()/Verywell-20-4023748-SpinalTwist01-1729-5995b536845b340010c016cf.gif","по 30 секунди на секоја страна");
 
     }
 }
