@@ -1,16 +1,167 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-   <link href="../static/flip_card.css" type="text/css" rel="stylesheet"/>
-    <link th:href="@{~/flip_card.css}" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>HCI Project Categories Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <style>
-        .card{
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .btn-animate {
+                width: 60px;
+                margin: 1px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .card-description {
+                height: 130px;
+                font-size: 8px;
+            }
+            .card .face {
+                height: 120px;
+                transition: 0.5s;
+            }
+            .card .face.face2 {
+                height: 120px;
+                padding: 5px;
+            }
+            .card-img-top {
+                height: 80px;
+            }
+            .card-header-text{
+                font-size:12px;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            .btn-animate {
+                width: 60px;
+                margin: 1px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .card-description {
+                height: 160px;
+                font-size: 8px;
+            }
+            .card .face {
+                height: 150px;
+                transition: 0.5s;
+            }
+            .card .face.face2 {
+                height: 150px;
+                padding: 5px;
+            }
+            .card-img-top {
+                height: 120px;
+            }
+            .card-header-text{
+                font-size:12px;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .btn-animate {
+                width: 100px;
+                margin: 1px;
+                height: 35px;
+                line-height: 35px;
+            }
+            .card-description {
+                height: 235px;
+                font-size: 10px;
+            }
+            .card .face {
+                height: 260px;
+                transition: 0.5s;
+            }
+            .card .face.face2 {
+                height: 260px;
+                padding: 10px;
+            }
+            .card-img-top {
+                height: 250px;
+            }
+            .card-header-text{
+                font-size:15px;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .btn-animate {
+                width: 200px;
+                margin: 2px;
+                height: 35px;
+                line-height: 35px;
+            }
+            .card-description {
+                height: 230px;
+                font-size: 12px;
+            }
+            .card .face {
+                height: 250px;
+                transition: 0.5s;
+            }
+            .card .face.face2 {
+                height: 260px;
+                padding: 7px;
+            }
+            .card-img-top {
+                height: 260px;
+            }
+            .card-header-text{
+                font-size:18px;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            .btn-animate {
+                width: 250px;
+                height: 40px;
+                margin: 3px;
+                line-height: 40px;
+            }
+            .card-description {
+                height: 230px;
+                font-size: 14px;
+            }
+            .card .face {
+                height: 270px;
+                transition: 0.5s;
+            }
+            .card .face.face2 {
+                height: 270px;
+                padding: 14px;
+            }
+            .card-img-top {
+                height: 250px;
+            }
+            .card-header-text{
+                font-size:25px;
+            }
+        }
+
+        .column {
+            float: left;
+            width: 45%;
+            height: 45%;
+        }
+
+        .card {
             border: none;
         }
+
         .card .icon {
             position: absolute;
             top: 0;
@@ -19,10 +170,6 @@
             height: 100%;
             transition: 0.7s;
             z-index: 1;
-        }
-        .card .face {
-            height: 230px;
-            transition: 0.5s;
         }
 
         .card .face.face1 {
@@ -35,7 +182,7 @@
             transform: translateY(110px);
         }
 
-        .card:hover .face.face1{
+        .card:hover .face.face1 {
             background: white;
             transform: translateY(0px);
         }
@@ -50,19 +197,18 @@
         }
 
         .card .face.face2 {
-            height: 250px;
+            height: 300px;
             position: relative;
             background: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
             box-sizing: border-box;
-            box-shadow: 0 20px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
             transform: translateY(-110px);
         }
 
-        .card:hover .face.face2{
+        .card:hover .face.face2 {
             transform: translateY(0);
         }
 
@@ -74,91 +220,174 @@
         }
 
         .reminder {
-            width : 300px;
-            background: #e86f00;
-            margin : 20px auto;
+            max-width: 350px;
+            max-height: 180px;
+            background-color: #e86f00;
+            margin: 3px;
+        }
+
+        .btn-color {
+            background-image: linear-gradient(200deg, #FFCF00 30%, #FC4F4F 100%, #FFCF00 20%);
         }
 
         span {
-            padding : 10px;
-            background : #e86f00;
-            color : white;
-            font-size : 1.2em;
-            font-variant : small-caps;
-            cursor : pointer;
+            padding: 5px;
+            background-color: #e86f00;
+            color: white;
+            font-size: 1.1vw;
+            font-variant: small-caps;
+            cursor: pointer;
             display: block;
+        }
+
+        .btn-text-size {
+            font-size: 1.2vw;
         }
 
         span::after {
             float: right;
             right: 10%;
         }
+
         .slide {
-            clear:both;
-            width:100%;
-            height:0px;
+            clear: both;
+            width: 100%;
+            height: 0;
             overflow: hidden;
             text-align: center;
             transition: height .4s ease;
         }
 
-        #touch {position: absolute; opacity: 0; height: 0px;}
-        #touch:checked + .slide {height: 200px;}
+        #touch {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+        }
+
+        #touch:checked + .slide {
+            height: 200px;
+        }
+
+        .btn-animate {
+            float: left;
+            font-size: 1.5vw;
+            font-family: Impact, sans-serif;
+            text-align: center;
+            vertical-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            background: linear-gradient(-45deg, #ffa63d, #e86f00, #ff3d77, cornflowerblue);
+            background-size: 400%;
+            -webkit-animation: anime 10s linear infinite;
+            animation: anime 10s linear infinite;
+        }
+
+        @-webkit-keyframes anime {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        @keyframes anime {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        .color-cornflowerblue {
+            color: cornflowerblue;
+            font-size: 3vw;
+        }
 
     </style>
 </head>
 <body>
-<div class="mt-2 mb-5" style="position: relative; top:7%">
+<div class="container-fluid justify-content-around mt-2 mb-5" style="position: relative; top:7%">
     <div class="mt-2 text-center">
-        <h2 class="text-center display-4" style="color:cornflowerblue">Изберете какви вежби сакате </h2>
-        <h4 class="text-center" style="color:cornflowerblue">Може да изберете со помош на копчињата со броеви од
-            тастатура</h4>
-        <ul style="list-style: none;color: #e86f00">
-            <li>Кликни 'a' на тастатура, ако целта ти е категорија 1</li>
-            <li>Кликни 's' на тастатура, ако целта ти е категорија 2</li>
-            <li>Кликни 'd' на тастатура, ако целта ти е категорија 3</li>
-            <li>Кликни 'f' на тастатура, ако целта ти е категорија 4</li>
-            <li>Кликни 'g' на тастатура, ако целта ти е категорија 5</li>
-        </ul>
-        <form method="POST" action="/exercises">
-            <label class="text-center" style="color:cornflowerblue" for='search1'>Вметни број на категорија и ентер:</label><br/>
-            <input id='search1' type='text' name='search1'/><br/>
-            <input class="text-white mt-1" style="background-color:#e86f00" type="submit" value="Submit" id="done">
-        </form>
-        <div class="reminder">
-            <label for="touch"><span>Потсетник <i class="fa fa-bars text-white"></i></span></label>
-            <input type="checkbox" id="touch">
-            <div class="slide">
-                <p class="text-white">Здраво
-                    <th:block th:if="${#request.getRemoteUser() != null}" th:text="${#request.getRemoteUser()}"></th:block>!
-                    Минатата недела ги завршивте вежбите за:<br><b>Раце</b><br><b>Грб</b><br><br>
-                    Наш предлог за вас е: <b>Истегнување</b>
-                </p>
+        <div class="row justify-content-around">
+            <div class="col-8 justify-content-around">
+                <h2 class="text-center display-4 color-cornflowerblue">Изберете какви вежби сакате </h2>
+                <h2 class="text-center color-cornflowerblue">Може да изберете категорија со помош на копчињата со
+                    броеви од тастатура</h2>
             </div>
-
+        </div>
+        <div class="row mt-2 justify-content-around">
+            <div class="btn-animate">'А' ЗА КАТЕГОРИЈА 1</div>
+            <div class="btn-animate">'S' ЗА КАТЕГОРИЈА 2</div>
+            <div class="btn-animate">'D' ЗА КАТЕГОРИЈА 3</div>
+            <div class="btn-animate">'F' ЗА КАТЕГОРИЈА 4</div>
+            <div class="btn-animate">'G' ЗА КАТЕГОРИЈА 5</div>
+        </div>
+        <div class="row mb-2 justify-content-around">
+            <div class="btn-animate">'Z' ЗА КАТЕГОРИЈА 6</div>
+            <div class="btn-animate">'X' ЗА КАТЕГОРИЈА 7</div>
+            <div class="btn-animate">'C' ЗА КАТЕГОРИЈА 8</div>
+            <div class="btn-animate">'V' ЗА КАТЕГОРИЈА 9</div>
+            <div class="btn-animate">'B' ЗА КАТЕГОРИЈА 10</div>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-sm-4 col-md-4 col-xs-4 ">
+                <span class="reminder rounded">
+                <form class="form" method="POST" action="/exercises">
+                    <label class="text-center text-white" for='search1'>Вметни број на категорија и
+                        ентер:</label><br/>
+                    <input class="rounded" id='search1' type="text" name='search1'/><br/>
+                    <input class="btn mt-2 text-white rounded btn-outline-light btn-text-size" type="submit"
+                           value="ПРОДОЛЖИ"
+                           id="done">
+                </form>
+                </span>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xs-4 column">
+                <div class="btn reminder">
+                    <label for="touch"><span>Потсетник <i class="fa fa-bars text-white"></i></span></label>
+                    <input type="checkbox" id="touch">
+                    <div class="slide">
+                        <p class="text-white btn-text-size">Здраво
+                            <th:block th:if="${#request.getRemoteUser() != null}"
+                                      th:text="${#request.getRemoteUser()}"></th:block>
+                            !
+                            Минатата недела ги завршивте вежбите за:<b>Раце</b> и <b>Грб</b><br>
+                            Наш предлог за вас е: <b>Истегнување</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="row mt-4 justify-content-around">
-            <div class="col-xs-8 col-sm-8 col-md-2" th:each="category: ${categories}">
+        <div class="row  justify-content-around">
+            <div class="col-md-2 column ml-1" th:each="category: ${categories}">
                 <div class="card">
                     <div class="face face1">
                         <div class="content card-img">
                             <div class="icon">
-                                <h3 class="text-center">
+                                <h3 class="text-center card-header-text">
                                     <th:block th:text="${category.id}"/>
                                     .
                                     <th:block th:text="${category.name}"/>
                                 </h3>
-                                <img th:src="${category.firstImage}" class="card-img-top" height="200px;">
+                                <img th:src="${category.firstImage}" class="card-img-top">
                             </div>
                         </div>
                     </div>
-                    <div class="face face2 mt-2">
+                    <div class="face face2 mt-4">
                         <div class="content">
-                            <p th:text="${category.description}" class="pt-2 pb-1"></p>
-                            <a class="btn btn-link btn-block text-white mt-1" name="seeEx" id="seeEx"
-                               th:href="@{'/exercises/{id}' (id=${category.getId()})}"
-                               style="background-color:#e86f00">Види ги вежбите
+                            <p th:text="${category.description}" class="card-description pt-4 pb-1"></p>
+                            <a class="btn btn-text-size btn-link btn-block text-white mt-1 mb-2 btn-color" name="seeEx"
+                               id="seeEx"
+                               th:href="@{'/exercises/{id}' (id=${category.getId()})}">ВИДИ ГИ ВЕЖБИТЕ
                             </a>
                         </div>
                     </div>
@@ -171,7 +400,7 @@
 </div>
 
 <script>
-    document.onkeyup = function(e) {
+    document.onkeyup = function (e) {
         if (e.which == 65) {
             {
                 //a
@@ -190,7 +419,7 @@
             //f
             $("#search1").val(4);
             $("#done").click();
-        } else if(e.which==71){
+        } else if (e.which == 71) {
             //g
             $("#search1").val(5);
             $("#done").click();

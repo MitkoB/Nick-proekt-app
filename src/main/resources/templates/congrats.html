@@ -3,50 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Congrats</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <style>
+        .certificate-col{
+            width: 100%;
+            height: 100%;
+        }
+        .certificate {
+            background-image: url('http://cdn.lowgif.com/full/42acb860ad0311cb-gif-frames-13-gif-images-download.gif');
+            background-size: 100% 100%;
+            box-shadow: 10px 10px 30px grey;
+        }
+
+        .header-style {
+            color: mediumvioletred;
+            font-size: 4.5vw;
+            font-family: Impact;
+        }
+
+        .text-style {
+            font-size: 1.8vw;
+            justify-content: center;
+            font-variant: small-caps;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5 mb-5 " xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-    <div class="bgContainer text-white mr-5 ml-5 pt-3 pb-5 pr-5 pl-5" style="background: cornflowerblue; box-shadow: 10px 10px 30px grey">
-        <h3 class="text-center display-4" style="color:antiquewhite">Сертификат за: <th:block th:text="${#request.getRemoteUser()}"></th:block></h3>
-        <hr style="background: linear-gradient(.25turn,darkmagenta, #e86f00, darkolivegreen);border:0; height:3px;" />
-        <div class="w3-container w3-animate-zoom">
-            <!--------------------- СЛИКИ------------------------------>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <!------ Тука провери ако има и втора слика внесено стави га до првата у иста колона ваљда добро ќее ----->
-                    <div  class="mt-4">
-                    <p  class="display-1" style="color: whitesmoke; font-size: 40px;">Овој сертификат го доделува</p>
+    <div class="row">
+        <div class="col-12 certificate-col">
+            <div class="bgContainer rounded certificate text-white mr-5 ml-5 pt-3 pb-5 pr-5 pl-5">
+                <br><br>
+                <h3 class="text-center display-4 header-style">Сертификат за:
+                    <th:block th:text="${#request.getRemoteUser()}"></th:block>
+                </h3>
+                <hr style="background: linear-gradient(.25turn,darkmagenta, #e86f00, darkolivegreen);border:0; height:3px;"/>
+                <div class="w3-container w3-animate-zoom">
+                    <!--------------------- СЛИКИ------------------------------>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <!------ Тука провери ако има и втора слика внесено стави га до првата у иста колона ваљда добро ќее ----->
+                            <div class="mt-4">
+                                <h4 class="display-1 text-style text-info">Овој сертификат го доделува</h4>
+                            </div>
+                            <div class="mt-4">
+                                <p class="header-style">МОЈ ВОДИЧ ЗА ФИЗИЧКО ЗДРАВЈЕ</p>
+                            </div>
+                        </div>
                     </div>
-                    <div  class="mt-4">
-                        <p  style="color: orangered; font-size: 40px; font-family:'Academy Engraved LET'">Мој тренер</p>
+                    <!--------------------- ИНФОРМАЦИИ ------------------------------>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-8 text-info pr-2 text-style">
+                            <dl>
+                                <dt>За:</dt>
+                                <dd><b>Овој сертификат се доделува за успешно комплетирање на серија од вежби,
+                                    продолжете вака! Мој тренер за вас
+                                    има на располагање уште многу други вежби да се чувствувате здрави и среќни. </b>
+                                </dd>
+                            </dl>
+                        </div>
                     </div>
+                    <div class="mt-5">
+                        <p class="display-1 text-center header-style">Браво!</p>
+                    </div>
+                    <audio style="display: none" controls autoplay id="bravoAudio" src="../static/images/bravo.mp3"
+                           th:src="@{images/bravo.mp3}" type="audio/mpeg">
+                    </audio>
                 </div>
-            </div>
-            <!--------------------- ИНФОРМАЦИИ ------------------------------>
-            <div class="row mt-3 justify-content-center">
-                <div class="col-6 text-right border-right pr-2">
-                    <dl>
-                        <dt style="color:white">За:</dt>
-                        <dd>Овој сертификат се доделува за успешно комплетирање на серија од вежби, продолжете вака! Мој тренер за вас
-                        има на располагање уште многу други вежби да се чувствувате здрави и среќни. Браво</dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="mt-5">
-                <p class="display-1 text-center" style="color: whitesmoke; font-size: 40px; font-family: 'Brush Script MT'">Браво!</p>
-            </div>
-            <audio style="display: none" controls autoplay id="bravoAudio" src="../static/images/bravo.mp3"  th:src="@{images/bravo.mp3}" type="audio/mpeg">
-            </audio>
             </div>
         </div>
     </div>
+</div>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         //autoplay rabote samo kaj edge kaj chrome nz oti nejke :(
         var audio = $('#bravoAudio').get(0);
         audio.play()

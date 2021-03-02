@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCI Project</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,8 +16,13 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 200px;
         }
         .formColumn{
+            width: 100%;
+            height: 100%;
             background: rgba(255, 255, 255, 0.8);
             border: 2px solid darkgray;
             border-radius: 5px;
@@ -37,9 +43,9 @@
     </style>
 </head>
 <body>
-<div class="container mt-5 " style="margin-bottom: 300px;">
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 formColumn">
+        <div class="col-8 col-md-4 formColumn">
             <form  method="post" action="/login" class="mt-5">
                 <h2 class="text-center">Најава</h2>
                 <div class="form-group mt-5">

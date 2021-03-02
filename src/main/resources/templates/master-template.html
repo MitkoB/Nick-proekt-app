@@ -2,25 +2,141 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>HCI project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <style>
+        nav>ul>li>.btn{
+            background-color:cornflowerblue;
+        }
+        nav>ul>li>.btn:hover{
+            background-color: #ffaaa4;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: montserrat;
+        }
+        nav{
+
+            height: 80px;
+            width: 100%;
+        }
+        nav ul{
+            float: right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: white;
+            font-size: 1.7vw;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        a:hover{
+            transition: .5s;
+        }
+        .checkbtn{
+            font-size: 3vw;
+            color: cornflowerblue;
+            float: right;
+            line-height: 100%;
+            cursor: pointer;
+            display: none;
+            margin-right: 5px;
+            margin-left: 10vw;
+        }
+        #check{
+            display: none;
+        }
+        @media (max-width: 952px){
+            nav ul li a{
+                font-size: 1.6vw;
+            }
+        }
+        @media (max-width: 858px){
+            .checkbtn{
+                display: block;
+            }
+            ul{
+                position: fixed;
+                width: 100%;
+                height: 10%;
+                background: #ffaaa4;
+                top: 140px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li{
+                margin-left: 15px;
+                margin-top: 15px;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 2vw;
+            }
+            a:hover{
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked ~ ul{
+                left: 0;
+            }
+        }
+
+
+        a:hover, a>b:hover{
+            text-decoration: none;
+            color: #ffaaa4;
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand navbar-light" style="position:relative; z-index:10;width: 100%; max-width:100%; top:0;">
-    <a href="/" class="display-1" style="color: cornflowerblue; font-size: 40px; font-family: 'Brush Script MT'">Мој тренер</a>
-    <ul class="navbar-nav font-weight-bold ml-auto" >
-        <li class="nav-item mr-1" >
-            <button class="btn text-white " style="background-color: cornflowerblue;">
+<nav class="navbar navbar-expand navbar-light mt-5"
+     style="position:relative; z-index:10;width: 100%; max-width:100%; top:0;">
+    <img style="border-radius: 50%; height: 70px; max-width: 60px;"
+         src="https://i.pinimg.com/originals/2e/86/d6/2e86d64a1d1f941b34fb22c830d2a862.gif"/>
+    <a href="/" class="display-1 mt-1 pt-1 nav-heading" style="color: cornflowerblue;font-family: Impact; font-size: 4.4vw; text-decoration: none;">
+        <b >&nbsp;МОЈ ВОДИЧ
+    ЗА ФИЗИЧКО ЗДРАВЈЕ</b></a>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars fa-lg fa-4x"></i>
+    </label>
+    <ul class="navbar-nav font-weight-bold ml-auto">
+        <li class="nav-item mr-1">
+            <button class="btn text-white rounded">
                 <a href="/categories" class="nav-link text-white">Вежби <i class="fa fa-child"></i></a>
             </button>
         </li>
         <li class="nav-item mr-1">
-            <button class="btn text-white" style="background-color: cornflowerblue;">
+            <button class="btn text-white rounded">
                 <a href="/help" class="nav-link text-white">Помош <i class="fa fa-question-circle"></i></a>
             </button>
         </li>

@@ -2,138 +2,195 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вежби</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <style>
-        .card-body {
-            height: 300px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+            .flip-card-front, .flip-card-back,  .flip-card.flipped .flip-card-inner{
+                height: 400px;
+            }
+            img {
+                height: 190px;
+            }
+        }
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            .column {
+                width: 100%;
+            }
+            .flip-card-front, .flip-card-back,  .flip-card.flipped .flip-card-inner{
+                height: 450px;
+            }
+            img {
+                height: 210px;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .column {
+                width: 100%;
+            }
+            .flip-card-front, .flip-card-back,  .flip-card.flipped .flip-card-inner{
+                height: 550px;
+            }
+            img {
+                height: 220px;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .column {
+                width: 100%;
+            }
+            .flip-card-front, .flip-card-back,  .flip-card.flipped .flip-card-inner{
+                height: 900px;
+            }
+            img {
+                height: 230px;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            .column {
+                width: 100%;
+            }
+
+            .flip-card-front, .flip-card-back, .flip-card.flipped .flip-card-inner {
+                height: 1100px;
+            }
+            img {
+                height: 250px;
+            }
+        }
+
+        .bravo-img {
+            max-width: 250px;
+            max-height: 250px;
+        }
+
+        .bravo-text {
+            font-size: 4vw;
+            font-family: Impact;
         }
 
         .flip-card {
-            background-color: transparent;
-            height: 200px;
-            border: 1px solid #f1f1f1;
-            perspective: 1000px; /* Remove this if you don't want the 3D effect */
+            outline-color: #5a99d4;
+            cursor: pointer;
         }
 
-        /* This container is needed to position the front and back side */
         .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
+            transition: transform 0.5s;
             transform-style: preserve-3d;
+            box-shadow: 0 8px 10px 0 rgba(90, 90, 90, 0.2)
         }
 
-        /* Do an horizontal flip when you move the mouse over the flip box container */
-        .flip-card:hover .flip-card-inner {
+        .flip-card.flipped .flip-card-inner {
             transform: rotateY(180deg);
+            background-color: forestgreen;
         }
 
-        /* Position the front and back side */
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
-            backface-visibility: hidden;
-        }
-
-        /* Style the front side (fallback if image is missing) */
         .flip-card-front {
-            background-color: #bbb;
-            color: black;
+            position: absolute;
         }
 
-        /* Style the back side */
+        .flip-card-front, .flip-card-back {
+            -webkit-backface-visibility: hidden;
+            z-index: 1;
+        }
+
         .flip-card-back {
-            background-color: darkolivegreen;
-            color: white;
             transform: rotateY(180deg);
-        }
-        #bgContainer {
-            background: rgba(0,38,77,1);
-            box-shadow: 20px 10px 30px orange;
-        }
-
-        .scroll-animations {
-            display: flex;
-        }
-
-        .scroll-animations div {
-            flex-grow: 1;
-            padding: 30px;
+            font-variant: small-caps;
+            position: center;
             text-align: center;
-            opacity: 0;
-            color: #333;
         }
 
-        .scroll-animations div span {
-            font-size: 4em;
-            color: #5AA9E0;
+        .description-text {
+            font-size: 1.2vw;
         }
-
-        .scroll-animations div h3 {
-            font-size: 1.9em;
-            font-weight: 400;
-            margin-bottom: 10px;
+        .h2-text{
+            font-size: 1.9vw;
         }
     </style>
 </head>
 <body>
 <div class="container mt-2 mb-5" style="position: relative; top:7%">
     <div class="mt-2">
-        <h2 class="text-center display-4" style="color:cornflowerblue">Листа со вежби</h2>
-        <hr style="background: linear-gradient(.25turn,cornflowerblue, green, white); height:3px;" />
+        <h2 class="text-center display-4 h2-text" style="color:cornflowerblue">Листа со вежби</h2>
+        <hr style="background: linear-gradient(.25turn,cornflowerblue, green, white); height:3px;"/>
     </div>
     <div class="row mt-6 justify-content-around">
-        <div class="col-md-4 col-sm-8 col-md-2" th:each="ex: ${exercises}">
-            <div class="card">
-                <div class="face face1">
-                    <div class="content card-img">
-                        <div class="icon">
-                            <h3 class="text-center">
-                                <th:block th:text="${ex.getName()}"/>
-                            </h3>
-                            <img th:src="${ex.getImageFirst()}" class="card-img-top" height="200px;">
+        <div class="col-md-4 col-sm-8 col-md-2 column d-flex align-items-stretch" th:each="ex: ${exercises}">
+            <div class="card rounded mb-3 flex-fill" style="border:0;">
+                <div class="flip-card rounded align-items-center mb-3 flex-fill">
+
+                    <div class="flip-card-inner rounded flex-fill ">
+                        <div class="flip-card-front flex-fill ">
+                            <div class="view overlay">
+                                <img th:src="${ex.getImageFirst()}" class="card-img-top rounded" alt="">
+                                <a href="#">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body description-text flex-fill" style="border:0;">
+                                <h2 class="h2-text" th:text="${ex.getName()}"></h2>
+                                <p class="card-text pt-2 description-text">
+                                    <b>Опис:</b>
+                                <p th:text="${ex.getDescription}" class="p-2 description-text"></p>
+                                <b>Повторувања:</b>
+                                <p th:text="${ex.getRepeat()}" class="p-2 description-text"></p>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="face face2 mt-2">
-                    <div class="content">
-                        <b>Опис:</b>
-                        <p th:text="${ex.getDescription}" class="pt-2 pb-1"></p>
-                        <b>Повторувања:</b>
-                        <p th:text="${ex.getRepeat()}" class="pt-2 pb-1"></p>
-                        <p>
-                            <input type="checkbox" name="finish_exercise" id="finish_exercise" onclick="myFunction()" class="" >
-                            <label for="finish_exercise"><b>Ја комплетирав!</b></label>
-                        </p>
+                        <div class="flip-card-back rounded align-items-center text-center text-white ">
+                            <br/><br/>
+                            <div class="bravo-text"><p><b>БРАВО!</b></p></div>
+                            <img class="bravo-img" src="https://i.gifer.com/5Q0z.gif"/>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div style="text-align: center">
-        <a type="button"  id="finish" name="finish" href="/congrats" class="pulse-button btn btn-lg btn-primary"
-           style="background: green; height: 10%; width: 20%;">КРАЈ <br></a>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col mb-3">
+            <div style="text-align: center">
+                <a type="button" id="finish" name="finish" href="/congrats"
+                   class="pulse-button btn btn-lg btn-primary"
+                   style="background: green; height: 10%; width: 20%;">КРАЈ <br></a>
+            </div>
+        </div>
     </div>
 </div>
 <script>
-    function myFunction(){
-    var checkBox = document.getElementById("finish_exercise");
-        if (checkBox.checked == true){
-        window.alert("БРАВО! ПРЕМИНИ НА НАРЕДНА ВЕЖБА");
-    }}
+    $('.flip-card').on('click',
+        function () {
+            $(this).toggleClass('flipped')
+        })
 </script>
 </body>
 </html>
