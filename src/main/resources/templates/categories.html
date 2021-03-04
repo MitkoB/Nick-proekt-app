@@ -377,6 +377,19 @@
                                     <th:block th:text="${category.id}"/>
                                     .
                                     <th:block th:text="${category.name}"/>
+                                    <th:block th:if="${category.getId()==4}">
+                                       <div>
+                                        <audio    id="raceKategorija" src="../static/images/nick-race.mp3"
+                                                th:src="@{images/nick-race.mp3}" type="audio/mpeg">
+                                        </audio>
+                                       </div>
+                                        <div>
+                                            <button onClick="document.getElementById('raceKategorija').play()">Старт</button>
+                                            <button onClick="document.getElementById('raceKategorija').pause()">Пауза</button>
+                                            <button onClick="document.getElementById('raceKategorija').volume += 0.1">+</button>
+                                            <button onClick="document.getElementById('raceKategorija').volume -= 0.1">-</button>
+                                        </div>
+                                    </th:block>
                                 </h3>
                                 <img th:src="${category.firstImage}" class="card-img-top">
                             </div>
@@ -400,6 +413,11 @@
 </div>
 
 <script>
+    $(document).ready(function () {
+        // //autoplay rabote samo kaj edge kaj chrome nz oti nejke :(
+        // var audio = $('#raceKategorija').get(0);
+        // audio.play()
+    });
     document.onkeyup = function (e) {
         if (e.which == 65) {
             {
