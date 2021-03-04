@@ -36,6 +36,8 @@ public class ExerciseController {
     {
         List<Exercise> exercisesByCategory=exerciseService.findExercisesByCategory(id);
         model.addAttribute("exercises",exercisesByCategory);
+        Category category=categoryService.findCategoryById(id);
+        model.addAttribute("categoryName",category);
         model.addAttribute("bodyContent","exercises");
         return "master-template";
     }

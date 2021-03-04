@@ -271,6 +271,7 @@
         .btn-animate {
             float: left;
             font-size: 1.5vw;
+            height: fit-content;
             font-family: Impact, sans-serif;
             text-align: center;
             vertical-align: center;
@@ -384,10 +385,10 @@
                                         </audio>
                                        </div>
                                         <div>
-                                            <button onClick="document.getElementById('raceKategorija').play()">Старт</button>
-                                            <button onClick="document.getElementById('raceKategorija').pause()">Пауза</button>
-                                            <button onClick="document.getElementById('raceKategorija').volume += 0.1">+</button>
-                                            <button onClick="document.getElementById('raceKategorija').volume -= 0.1">-</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').play()">Старт <i class="fa fa-volume-up"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').volume += 0.1">+</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').volume -= 0.1">-</button>
                                         </div>
                                     </th:block>
                                 </h3>
