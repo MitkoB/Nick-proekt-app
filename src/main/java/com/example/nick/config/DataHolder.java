@@ -1,22 +1,23 @@
 package com.example.nick.config;
 
 import com.example.nick.service.CategoryService;
+import com.example.nick.service.DiseaseService;
 import com.example.nick.service.ExerciseService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class DataHolder {
     //public static List<Exercise> exerciseList=new ArrayList<>();
     private final ExerciseService exerciseService;
     private final CategoryService categoryService;
+    private final DiseaseService diseaseService;
 
-    public DataHolder(ExerciseService exerciseService, CategoryService categoryService) {
+    public DataHolder(ExerciseService exerciseService, CategoryService categoryService, DiseaseService diseaseService) {
         this.exerciseService = exerciseService;
         this.categoryService = categoryService;
+        this.diseaseService = diseaseService;
     }
 
     @PostConstruct
@@ -372,6 +373,41 @@ public class DataHolder {
                 "https://www.verywellfit.com/thmb/hpjA45LZ3k83Xna3ThBDJHwhtMU=/768x0/filters:no_upscale():" +
                         "max_bytes(150000):strip_icc():format(webp)/26-3566797-Throat-Lock-GIF-a96684d1ab734aff9d19e6430f808f72.gif",
                 "", "10 пати");
+        // za uslovi delot bolesti nekoj
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //.......................
+        //.......................
+        //.......................
+        this.diseaseService.create("Астма","Многу одлични и препорачани вежби за деца со астма се јога, пешачење, велосипедизам, пешачење, гимнастика и пливање.\n" +
+                "Кога започнувате нова активност, осигурете се дека вашето дете започнува на ниско ниво и постепено го зголемува нивното ниво на движење бидејќи се чувствува пријатно. Вршење на нови активности кои се премногу енергични за нивото на подготвеност на вашето дете, може да предизвикаат активирање на симптоми на астма. Знајте дека со текот на времето, како што вашето дете станува подобар, така и неговите бели дробови и напади на астма ќе станат помалку веројатни. Секогаш имајте на располагање лекови за ослободување во секое време кога вашето дете вежба.",
+                "https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Аутизам","кардиоваскуларни вежби и обука за сила / отпор (под надзор) секој ден, вкупно 60 минути (запомнете дека ова може да се распадне преку ден).\n" +
+                " \n" +
+                "\n" +
+                "Започнете со 5-10 минути континуирана активност, 1-2 дена во неделата. Полека зголемете го времетраењето на активноста на 10-30 минути, 3-4 дена во неделата. Подоцна можете да го зголемите на 15-60 минути за 5-7 дена во неделата.\n" +
+                " \n" +
+                "\n" +
+                "Пливањето и водената игра добро функционираат кај деца со големи сетилни потреби.\n" +
+                " \n" +
+                "\n" +
+                "Фокусирајте се на поттикнување на основните вештини за движење - трчање, фаќање, клоци, скок, фрлање, клоци или скокање. Додека ова за некои изгледа како големи чекори, разделете ја секоја вештина на мали делови и фокусирајте се на претерани движења.","https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+
+        this.diseaseService.create("Диабетис","Општата физичка активност треба да се охрабрува најмалку 40 -60 минути на ден.\n" +
+                        "Треба да се охрабрат вежби за носење тежина под водство на професионалец, како што е акредитиран физиолог за вежбање, за да помогне во подобрувањето на целокупната јачина на детето и контролата и регулацијата на гликозата.\n" +
+                        "Флексибилноста е исто така важна, затоа обидете се и охрабрувајте лесно истегнување пред и по вежбање.",
+                "https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Епилепсија"," Кога вашето дете работи со акредитиран физиолог за вежбање, тие ќе обезбедат различни безбедни и различни техники за вежбање за да му помогнете на вашето дете во редовно физичко вежбање за да ја подобри нивната физичка подготвеност, самодоверба и социјална интеграција.",
+                "https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Физички онеспособености","Некои одлични вежби за деца со телесен инвалидитет се бокс и пливање и водена аеробик. Боксот и пливањето промовираат зголемена функција и сила на надлактицата, како и кардиоваскуларна издржливост.\n" +
+                        "Забавните активности вклучуваат програми како што е Wii. Wii нуди активности користејќи ги само вашите раце за да можат да учествуваат оние што се на инвалидска количка. Игрите вклучуваат бокс, тенис, бејзбол и куглање. Ова е одличен начин да го вклучите целото семејство и да го задржите вашето дете во движење.\n" +
+                        "Важно е да се напомене дека децата со телесен инвалидитет можат да учествуваат во повеќето спортови. Спортот може да биде забавен за играње и може да му даде емоционален поттик на вашето дете. За да пронајдете спортови со кои вашето дете може да се занимава, прашајте ги другите родители, наставници, лекари и терапевти бидејќи тие честопати се свесни за достапните програми за помош на вашето дете. Откако ќе пронајдете програма, секогаш треба вашето дете да ја испроба. Не сите програми ќе работат за секого. Пронајдете таков што вашето дете се чувствува пријатно да се придружи и ужива да го направи.",
+                "https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+
+        this.diseaseService.create("Мускулна дистрофија","...","https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("АДХД (синдромот на недостаток на внимание и хиперактивност)","...","https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Срцеви заболувања","...","https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Церебрална парализа","...","https://www.vapf.com/blog/wp-content/uploads/2017/06/warning-lettings-rents-online-scam-1080x953.jpg");
+        this.diseaseService.create("Канцер","...","https://d33wubrfki0l68.cloudfront.net/8828caff34b3e8c496435f3a1c8addd8570cab32/e1486/images/2005/09/be-careful.png");
 
     }
 }

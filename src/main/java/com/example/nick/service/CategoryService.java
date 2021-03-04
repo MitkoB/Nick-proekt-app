@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface CategoryService {
     List<Category> findAllCategories();
     Category create(String name,String description, String firstImage, String secondImage);
-    Optional<Category> findCategoryById(Long id);
+    Category findCategoryById(Long id);
     Optional<Category> findCategoryByName(String name);
 }

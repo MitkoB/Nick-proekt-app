@@ -1,0 +1,9 @@
+<div class="container mt-5" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <div class="h1" th:text="${disease.getName()}">
+    </div>
+    <div class="text-center">
+    <img th:src="${disease.getImage()}" alt="importantImage"></img>
+    </div>
+    <div class="h3 mt-5" th:text="${disease.getDescription()}">
+    </div>
+</div>

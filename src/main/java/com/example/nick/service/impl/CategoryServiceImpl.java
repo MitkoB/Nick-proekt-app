@@ -1,5 +1,6 @@
 package com.example.nick.service.impl;
 
+import com.example.nick.exception.CategoryNotFound;
 import com.example.nick.model.Category;
 import com.example.nick.repository.CategoryRepository;
 import com.example.nick.service.CategoryService;
@@ -27,8 +28,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Optional<Category> findCategoryById(Long id) {
-        return categoryRepository.findById(id);
+    public Category findCategoryById(Long id) {
+        return categoryRepository.findById(id).orElseThrow(()->new CategoryNotFound());
     }
 
     @Override

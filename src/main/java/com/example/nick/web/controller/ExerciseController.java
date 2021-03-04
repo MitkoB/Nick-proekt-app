@@ -44,6 +44,8 @@ public class ExerciseController {
     {
         List<Exercise> exercisesByCategory=exerciseService.findExercisesByCategory(Integer.parseInt(search1));
         model.addAttribute("exercises",exercisesByCategory);
+        Category category=categoryService.findCategoryById(Long.parseLong(search1));
+        model.addAttribute("categoryName",category);
         model.addAttribute("bodyContent","exercises");
         return "master-template";
     }
