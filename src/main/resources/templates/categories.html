@@ -378,6 +378,45 @@
                                     <th:block th:text="${category.id}"/>
                                     .
                                     <th:block th:text="${category.name}"/>
+                                    <th:block th:if="${category.getId()==1}">
+                                        <div>
+                                            <audio  id="vratKategorija" src="../static/images/nick-vrat.mp3"
+                                                      th:src="@{images/nick-vrat.mp3}" type="audio/mpeg" crossOrigin="anonymous">
+                                            </audio>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('vratKategorija').play()">Старт <i class="fa fa-volume-up"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('vratKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('vratKategorija').volume += 0.1">+</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('vratKategorija').volume -= 0.1">-</button>
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${category.getId()==2}">
+                                        <div>
+                                            <audio    id="grbKategorija" src="../static/images/nick-grb.mp3"
+                                                      th:src="@{images/nick-grb.mp3}" type="audio/mpeg" crossOrigin="anonymous">
+                                            </audio>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('grbKategorija').play()">Старт <i class="fa fa-volume-up"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('grbKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('grbKategorija').volume += 0.1">+</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('grbKategorija').volume -= 0.1">-</button>
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${category.getId()==3}">
+                                        <div>
+                                            <audio    id="stomakKategorija" src="../static/images/nick-stomak.mp3"
+                                                      th:src="@{images/nick-stomak.mp3}" type="audio/mpeg" crossOrigin="anonymous">
+                                            </audio>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('stomakKategorija').play()">Старт <i class="fa fa-volume-up"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('stomakKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('stomakKategorija').volume += 0.1">+</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('stomakKategorija').volume -= 0.1">-</button>
+                                        </div>
+                                    </th:block>
                                     <th:block th:if="${category.getId()==4}">
                                        <div>
                                         <audio    id="raceKategorija" src="../static/images/nick-race.mp3"
@@ -389,6 +428,19 @@
                                             <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
                                             <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').volume += 0.1">+</button>
                                             <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('raceKategorija').volume -= 0.1">-</button>
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${category.getId()==5}">
+                                        <div>
+                                            <audio    id="ramoKategorija" src="../static/images/nick-ramo.mp3"
+                                                      th:src="@{images/nick-ramo.mp3}" type="audio/mpeg" crossOrigin="anonymous">
+                                            </audio>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('ramoKategorija').play()">Старт <i class="fa fa-volume-up"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('ramoKategorija').pause()">Пауза <i class="fa fa-pause"></i></button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('ramoKategorija').volume += 0.1">+</button>
+                                            <button class="btn btn-sm btn-light bg-light border border-warning" onClick="document.getElementById('ramoKategorija').volume -= 0.1">-</button>
                                         </div>
                                     </th:block>
                                 </h3>
