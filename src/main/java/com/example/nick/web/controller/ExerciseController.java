@@ -26,6 +26,7 @@ public class ExerciseController {
     @GetMapping("/categories")
     public String getCategories(Model model)
     {
+
         List<Category> allCategories=categoryService.findAllCategories();
         model.addAttribute("categories",allCategories);
         model.addAttribute("bodyContent", "categories");

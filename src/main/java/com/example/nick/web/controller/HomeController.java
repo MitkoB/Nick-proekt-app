@@ -4,6 +4,9 @@ import com.example.nick.service.DiseaseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class HomeController {
@@ -33,8 +36,19 @@ public class HomeController {
         return "master-template";
     }
     @GetMapping("/congrats")
-    public String getCongratsPage(Model model)
+    public String getCongratsPage(Model model, @RequestParam String categoryComplete, HttpServletRequest request)
     {
+
+            if(request.getSession().getAttribute("categoriesCompleted")==null)
+            {
+               request.getSession().setAttribute("categoriesCompleted",categoryComplete);
+            }
+            else{
+                String allCat=(String) request.getSession().getAttribute("categoriesCompleted");
+                allCat+=", "+categoryComplete;
+                request.getSession().setAttribute("categoriesCompleted",allCat);
+            }
+
         model.addAttribute("bodyContent", "congrats");
         return "master-template";
     }

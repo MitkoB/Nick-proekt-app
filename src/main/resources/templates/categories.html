@@ -360,8 +360,18 @@
                             <th:block th:if="${#request.getRemoteUser() != null}"
                                       th:text="${#request.getRemoteUser()}"></th:block>
                             !
-                            Минатата недела ги завршивте вежбите за:<b>Раце</b> и <b>Грб</b><br>
-                            Наш предлог за вас е: <b>Истегнување</b>
+                            <th:block  th:if="${session.categoriesCompleted != null}">
+                            Веќе ги имате завршено вежбите за:<b>
+                                <th:block
+                                    th:text="${session.categoriesCompleted}">
+                                </th:block>
+                            </b>
+                            <br>
+                            Наш предлог е да продолжите со останатите категории на вежби
+                            </th:block>
+                            <th:block th:if="${session.categoriesCompleted == null}">
+                                Време е да почнете со вашата прва категорија на вежби, изберете ја најсоодветната за вас!
+                            </th:block>
                         </p>
                     </div>
                 </div>
